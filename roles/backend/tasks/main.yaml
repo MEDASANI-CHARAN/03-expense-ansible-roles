@@ -24,19 +24,19 @@
     path: /app
     state: directory
 
-# - name: Download backend code
-#   tags:
-#   - deployment
-#   ansible.builtin.get_url:
-#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
-#     dest: /tmp/backend.zip
-
 - name: Download backend code
   tags:
   - deployment
   ansible.builtin.get_url:
-    url: http://{{nexus_url}}:8081/repository/backend/com/expense/backend/{{appVersion}}/backend-{{appVersion}}.zip
+    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
     dest: /tmp/backend.zip
+
+# - name: Download backend code
+#   tags:
+#   - deployment
+#   ansible.builtin.get_url:
+#     url: http://{{nexus_url}}:8081/repository/backend/com/expense/backend/{{appVersion}}/backend-{{appVersion}}.zip
+#     dest: /tmp/backend.zip
 
 - name: Unzip backend code
   tags:

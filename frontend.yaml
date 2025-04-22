@@ -1,8 +1,6 @@
 - name: configure Frontend server
   hosts: localhost #frontend
   connection: local
-  vars_files:
-  - variables-prod.yaml
   become: yes
   roles:
   - frontend

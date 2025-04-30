@@ -2,7 +2,5 @@
   hosts: all #frontend
   connection: local
   become: yes
-  vars_files:
-  - variables-dev.yaml
   roles:
   - frontend

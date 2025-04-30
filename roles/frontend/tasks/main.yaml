@@ -27,7 +27,7 @@
 
 - name: download artifact from nexus
   ansible.builtin.unarchive:
-    src: http://{{nexus_url}}:8081/repository/frontend/com/expense/frontend/{{appVersion}}/frontend-{{appVersion}}.zip
+    src: "http://{{nexus_url}}:8081/repository/frontend/com/expense/frontend/{{appVersion}}/frontend-{{appVersion}}.zip"
     dest: /usr/share/nginx/html
     remote_src: yes
 
